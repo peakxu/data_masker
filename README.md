@@ -22,7 +22,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Mask customer names
+
+```ruby
+masked_name = DataMasker::MaskedName.new('John Doe')
+masked_name.first_name
+# => Cecile
+masked_name.initial
+# => Q
+masked_name.last_name
+# => Price
+masked_name.to_s
+# => Cecile Q. Price
+```
+
+Set salt
+```ruby
+DataMasker.salt = 'NaCl'
+masked_name = DataMasker::MaskedName.new('John Doe')
+masked_name.to_s
+# => "Louis P. Schrader"
+```
 
 ## Development
 
